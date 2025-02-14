@@ -3,13 +3,8 @@ import {
   EntityRepositoryType,
   PrimaryKey,
   Property,
-  Utils,
 } from '@mikro-orm/core'
-import { EntityName } from '@mikro-orm/nestjs'
 import { AuthorRepository } from './repository'
-
-export const getRepositoryToken = <T>(entity: EntityName<T>) =>
-  `${Utils.className(entity)}Repository`
 
 @Entity({ repository: () => AuthorRepository })
 export class Author {
